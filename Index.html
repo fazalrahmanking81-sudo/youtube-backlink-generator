@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YouTube Backlink Generator</title>
+<style>
+body{
+    font-family: Arial;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+input{
+    width:80%;
+    padding:10px;
+}
+button{
+    padding:10px 20px;
+    margin:10px;
+}
+#result{
+    margin-top:20px;
+    text-align:left;
+}
+</style>
+</head>
+<body>
+
+<h1>YouTube Backlink Generator</h1>
+
+<input type="text" id="url" placeholder="Enter YouTube URL">
+<br>
+
+<button onclick="generate()">Generate</button>
+
+<div id="result"></div>
+
+<script>
+function generate(){
+    let url = document.getElementById("url").value;
+    let result = document.getElementById("result");
+    result.innerHTML = "";
+
+    for(let i=1;i<=50;i++){
+        result.innerHTML +=
+        `<p>https://example${i}.com/?url=${encodeURIComponent(url)}</p>`;
+    }
+}
+</script>
+
+</body>
+</html>
